@@ -59,6 +59,12 @@ Show the generated SQL and results for each."""
 
 render_prompt("Prompt 2.2", "Test with Natural Language Queries", PROMPT_2_2)
 
+st.info("""
+:material/lightbulb: **You can also test these in the Cortex Analyst UI!**
+
+In Snowsight, navigate to **AI & ML → Cortex Analyst** in the left sidebar. Select your `PORT_OPERATIONS_VIEW` semantic view, and you'll see a playground where you can type natural language questions and see the generated SQL and results interactively. Try pasting the questions above directly into that playground.
+""")
+
 render_explanation("What this prompt does", """
 Tests Cortex Analyst across different question types:
 

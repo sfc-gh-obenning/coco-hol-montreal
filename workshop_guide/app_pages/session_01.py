@@ -44,16 +44,16 @@ USE WAREHOUSE PORT_MTL_WH;
 PROMPT_1_2 = """In PORT_MTL_AI.PORT_OPS, load data from publicly hosted CSV files into tables.
 
 The CSV files are hosted at these URLs:
-- https://montreal-hol.streamlit.app/terminals.csv
-- https://montreal-hol.streamlit.app/vessels.csv
-- https://montreal-hol.streamlit.app/container_manifests.csv
-- https://montreal-hol.streamlit.app/cargo_invoices.csv
-- https://montreal-hol.streamlit.app/rail_schedules.csv
-- https://montreal-hol.streamlit.app/crane_utilization.csv
-- https://montreal-hol.streamlit.app/truck_queue_times.csv
-- https://montreal-hol.streamlit.app/port_incident_logs.csv
-- https://montreal-hol.streamlit.app/marine_safety_reports.csv
-- https://montreal-hol.streamlit.app/cbsa_inspection_reports.csv
+- https://montreal-hol.streamlit.app/app/static/terminals.csv
+- https://montreal-hol.streamlit.app/app/static/vessels.csv
+- https://montreal-hol.streamlit.app/app/static/container_manifests.csv
+- https://montreal-hol.streamlit.app/app/static/cargo_invoices.csv
+- https://montreal-hol.streamlit.app/app/static/rail_schedules.csv
+- https://montreal-hol.streamlit.app/app/static/crane_utilization.csv
+- https://montreal-hol.streamlit.app/app/static/truck_queue_times.csv
+- https://montreal-hol.streamlit.app/app/static/port_incident_logs.csv
+- https://montreal-hol.streamlit.app/app/static/marine_safety_reports.csv
+- https://montreal-hol.streamlit.app/app/static/cbsa_inspection_reports.csv
 
 For each file:
 1. Create a file format (CSV with SKIP_HEADER=1, FIELD_OPTIONALLY_ENCLOSED_BY='"')
@@ -72,7 +72,7 @@ Loads all 10 operational data tables from pre-hosted CSV files. Cortex Code will
 
 **Pattern 1 — External stage + INFER_SCHEMA**:
 ```sql
-CREATE OR REPLACE STAGE csv_stage URL = 'https://montreal-hol.streamlit.app/';
+CREATE OR REPLACE STAGE csv_stage URL = 'https://montreal-hol.streamlit.app/app/static/';
 
 CREATE OR REPLACE TABLE TERMINALS
   USING TEMPLATE (

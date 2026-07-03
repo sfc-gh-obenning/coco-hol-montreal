@@ -9,6 +9,16 @@ render_technologies_used([
     {"name": "st.connection(\"snowflake\")", "description": "The Streamlit connection API for Snowflake on container runtime. Returns a connection object with .session() for Snowpark. No credentials needed — inherits the logged-in user's session.", "icon": "terminal"},
 ])
 
+st.markdown("---")
+
+st.markdown("#### :material/open_in_new: Open Workspaces")
+with st.container(border=True):
+    st.markdown("""
+For this section, open **Workspaces** in Snowsight (left navigation panel → Projects → Workspaces). Workspaces provides an IDE-like environment where Cortex Code can create and edit Streamlit app files directly.
+
+Paste the prompts below into Cortex Code **within Workspaces** so the generated code is written directly into your app files.
+""")
+
 
 PROMPT_6_1 = """In PORT_MTL_AI.PORT_OPS, create a Streamlit app called PORT_OPS_DASHBOARD that runs on the container runtime.
 
@@ -92,6 +102,18 @@ PROMPT_6_2 = """Show me the SQL to verify the Streamlit app and compute pool:
 Also provide me with the direct URL to open the Streamlit app in Snowsight."""
 
 render_prompt("Prompt 6.2", "Verify & Access the App", PROMPT_6_2)
+
+st.success("""
+:material/rocket_launch: **Preview and Deploy your app!**
+
+Once Cortex Code has generated your app files in Workspaces:
+
+1. **Run** — Click the **Run** button (▶️) in the top-right of the Workspaces editor to preview your app. This launches a local preview so you can see the dashboard and chat interface in action.
+
+2. **Deploy** — When you're happy with the preview, click **Deploy** to publish the app to your Snowflake account. This makes it accessible to anyone with the appropriate role via Snowsight.
+
+Try modifying the app (add a chart, change KPI labels) and re-run to see changes live!
+""")
 
 render_explanation("What this prompt does", """
 Verification and access:

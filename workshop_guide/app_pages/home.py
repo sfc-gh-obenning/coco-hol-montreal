@@ -5,20 +5,21 @@ st.markdown("Building Intelligence for Canada's Eastern Gateway with Snowflake C
 
 st.space("small")
 
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Annual trade", "$100B+", help="Port of Montreal annual trade value")
-col2.metric("Sessions", "6", help="Hands-on lab sessions")
-col3.metric("Prompts", "16", help="Total Cortex Code prompts")
-col4.metric("Duration", "3 hrs", help="Total workshop time")
+col1, col2, col3 = st.columns(3)
+col1.metric("Sections", "6", help="Hands-on lab sections")
+col2.metric("Prompts", "16", help="Total prompts across all tools")
+col3.metric("Duration", "3 hrs", help="Total workshop time")
 
 st.space("medium")
 
 st.markdown("#### How this workshop works")
 
 st.markdown("""
-Each session has **numbered prompts** that you copy and paste directly into **Cortex Code**.
-Cortex Code interprets your natural language instruction and executes the appropriate
-SQL, Python, or configuration against your Snowflake account.
+Each section has **numbered prompts** that you copy and paste into the appropriate tool:
+
+- **Cortex Code** — for building infrastructure, creating objects, and writing SQL/Python
+- **Cortex Analyst** — for testing natural language queries against your semantic view
+- **Snowflake CoWork** — for collaborative data exploration and analysis
 
 All prompts build on each other sequentially — run them in order throughout the morning.
 """)

@@ -13,7 +13,7 @@ render_technologies_used([
 PROMPT_4_1 = """In PORT_MTL_AI.PORT_OPS, create a Cortex Agent called PORT_OPS_AGENT that port operations staff can use to ask questions about both structured data and unstructured documents.
 
 It should:
-- Use claude-sonnet-4-6 as the orchestration model
+- Use auto as the orchestration model
 - Have two tools: the PORT_OPERATIONS_VIEW semantic view (for structured data queries) and the port_knowledge_search Cortex Search service (for safety docs and inspection reports)
 - Include instructions that define it as the Port of Montreal Operations Assistant, guiding it to use the right tool for the question type — structured data tool for numbers/volumes/metrics, search tool for incidents/reports/documents
 - Mention key domain context in the instructions: Canada's second-largest port on the St. Lawrence River, $100B annual trade, key terminals (Maisonneuve, Cast, Viau, Bickerdike, Racine), Seaway winter closure Dec-Mar, and support for English and French
@@ -28,7 +28,7 @@ Creates a **Cortex Agent** — an AI orchestrator that combines multiple data to
 
 **CREATE AGENT anatomy**:
 
-- **MODEL**: The LLM used for orchestration (planning, reflection, response generation). `claude-sonnet-4-6` is recommended for strong reasoning.
+- **MODEL**: The LLM used for orchestration (planning, reflection, response generation). `auto` lets Snowflake select the best available model.
 
 - **TOOLS**: The capabilities the agent can use:
   - **Cortex Search service** (`port_knowledge_search`): For searching unstructured documents
