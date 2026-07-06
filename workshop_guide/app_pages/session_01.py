@@ -46,7 +46,7 @@ PROMPT_1_2 = """In PORT_MTL_AI.PORT_OPS, the 10 CSV files have been uploaded to 
 
 For all 10 tables (TERMINALS, VESSELS, CONTAINER_MANIFESTS, CARGO_INVOICES, RAIL_SCHEDULES, CRANE_UTILIZATION, TRUCK_QUEUE_TIMES, PORT_INCIDENT_LOGS, MARINE_SAFETY_REPORTS, CBSA_INSPECTION_REPORTS):
 
-1. Create a file format (CSV with SKIP_HEADER=1, FIELD_OPTIONALLY_ENCLOSED_BY='"')
+1. Create a file format (CSV with PARSE_HEADER=TRUE, FIELD_OPTIONALLY_ENCLOSED_BY='"')
 2. Create the tables with appropriate column types inferred from the data
 3. Load the data
 
@@ -71,7 +71,7 @@ Loads all 10 operational data tables from CSV files uploaded to the internal sta
 ```sql
 CREATE OR REPLACE FILE FORMAT csv_format
   TYPE = CSV
-  SKIP_HEADER = 1
+  PARSE_HEADER = TRUE
   FIELD_OPTIONALLY_ENCLOSED_BY = '"';
 
 CREATE OR REPLACE TABLE TERMINALS
